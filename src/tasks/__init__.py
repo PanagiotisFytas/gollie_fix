@@ -2,6 +2,7 @@ from typing import Dict, List
 
 from . import (
     ace,
+    biotriplex,
     bc5cdr,
     broadtwitter,
     casie,
@@ -30,6 +31,9 @@ TASK_ID_TO_TASKS = {
     "ACE05_RC": "src.tasks.ace",
     "ACE05_EE": "src.tasks.ace",
     "ACE05_EAE": "src.tasks.ace",
+    "Biotriplex_NER": "src.tasks.biotriplex",
+    "Biotriplex_RE": "src.tasks.biotriplex",
+    "Biotriplex_RC": "src.tasks.biotriplex",
     "RAMS_EAE": "src.tasks.rams",
     "CoNLL03_NER": "src.tasks.conll03",
     "CASIE_EE": "src.tasks.casie",
@@ -65,6 +69,7 @@ TASK_ID_TO_TASKS = {
 
 __all__ = [
     "ace",
+    "biotriplex",
     "rams",
     "conll03",
     "casie",
@@ -143,6 +148,10 @@ def task_id_to_guidelines(task_id: str) -> Dict[str, Dict[str, List[str]]]:
     """
     if task_id.lower() == "ace05":
         from src.tasks.ace.guidelines_gold import GUIDELINES
+
+        return GUIDELINES
+    elif task_id.lower() == "biotriplex":
+        from src.tasks.biotriplex.guidelines_gold import GUIDELINES
 
         return GUIDELINES
     elif task_id.lower() == "rams":

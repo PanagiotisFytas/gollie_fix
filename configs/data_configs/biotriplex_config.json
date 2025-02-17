@@ -1,0 +1,39 @@
+{
+    "dataset_name": "Biotriplex",
+    "tasks": [
+        "NER",
+        "RE",
+        "RC"
+    ],
+    "dataloader_cls": "src.tasks.biotriplex.data_loader.BiotriplexDatasetLoader",
+    "sampler_cls": "src.tasks.biotriplex.data_loader.BiotriplexSampler",
+    "train_file": "train",
+    "dev_file": "val",
+    "test_file": "test",
+    "prompt_template": "templates/prompt.txt",
+    "seed": [0, 24, 42],
+    "label_noise_prob": [0.15, 0.50, 0.75],
+    "task_configuration": {
+        "NER": {
+            "parallel_instances": 1,
+            "max_guidelines": -1,
+            "guideline_dropout": 0.15,
+            "scorer": "src.tasks.biotriplex.scorer.BiotriplexEntityScorer"
+        },
+        "RE": {
+            "group_by": "sentence",
+            "parallel_instances": 1,
+            "max_guidelines": -1,
+            "guideline_dropout": 0.15,
+            "scorer": "src.tasks.biotriplex.scorer.BiotriplexCoarseRelationScorer"
+        },
+        "RC": {
+            "group_by": "sentence",
+            "parallel_instances": 1,
+            "max_guidelines": -1,
+            "guideline_dropout": 0.15,
+            "scorer": "src.tasks.biotriplex.scorer.BiotriplexRelationScorer",
+            "ensure_positives_on_train": true
+        }
+    }
+}
