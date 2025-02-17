@@ -24,4 +24,4 @@ CONFIGS_FOLDER="configs/model_configs"
 # Call this script from root directory as: sbatch bash_scripts/GoLLIE-7B_CodeLLaMA_train_full_model.sh
 
 
-torchrun --standalone --master_port 37223 --nproc_per_node=8 src/run.py  ${CONFIGS_FOLDER}/GoLLIE-7B_CodeLLaMA_train_biotriplex.yaml
+torchrun --standalone --master_port 37223 --nproc_per_node=2 src/run.py  ${CONFIGS_FOLDER}/GoLLIE-7B_CodeLLaMA_train_biotriplex.yaml
