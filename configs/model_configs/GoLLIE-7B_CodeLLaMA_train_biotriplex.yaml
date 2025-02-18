@@ -11,7 +11,7 @@ deepspeed: configs/deepspeed_configs/deepspeed_zero2.json
 
 # dataset arguments
 dataset_dir:
-  /mnt/nas_home/pf376/Documents/gollie/data/processed_w_examples
+  /mnt/nas_home/pf376/Documents/gollie_fix/data/processed_w_examples
 train_tasks:
   - biotriplex.ner
   - biotriplex.rc
@@ -32,7 +32,7 @@ ignore_pad_token_for_loss: true
 prompt_loss_weight: 0.0
 
 # checkpoint settings
-output_dir: /mnt/nas_home/pf376/Documents/gollie/check/GoLLIE+-7b_CodeLLaMA_biotriplex
+output_dir: /mnt/nas_home/pf376/Documents/gollie_fix/check/GoLLIE+-7b_CodeLLaMA_biotriplex
 overwrite_output_dir: true
 load_best_model_at_end: false
 save_strategy: "epoch"
