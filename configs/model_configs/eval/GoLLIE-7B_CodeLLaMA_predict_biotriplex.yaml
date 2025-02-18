@@ -7,7 +7,7 @@ quantization_inference: null
 gradient_checkpointing: true
 force_auto_device_map: true
 use_flash_attention: true
-deepspeed: configs/deepspeed_configs/deepspeed_zero2.json
+#deepspeed: configs/deepspeed_configs/deepspeed_zero2.json
 
 # dataset arguments
 dataset_dir:
@@ -40,9 +40,9 @@ save_steps: 1000
 save_total_limit: 999
 
 # evaluation
-do_train: true
-do_eval: true
-do_predict: false
+do_train: false
+do_eval: fasle
+do_predict: true
 evaluation_strategy: "epoch"
 eval_steps: 250
 eval_delay: 0
