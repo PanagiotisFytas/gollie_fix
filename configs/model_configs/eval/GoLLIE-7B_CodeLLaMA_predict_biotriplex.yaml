@@ -2,12 +2,12 @@
 model_name_or_path: HiTZ/GoLLIE-7B
 torch_dtype: bfloat16
 use_lora: true
-quantization: null
-quantization_inference: null
+quantization: 8
+quantization_inference: 8
 bf16_full_eval: true
 gradient_checkpointing: true
 force_auto_device_map: true
-use_flash_attention: false
+use_flash_attention: true
 #deepspeed: configs/deepspeed_configs/deepspeed_zero2.json
 
 # dataset arguments
