@@ -93,15 +93,9 @@ class BiotriplexDatasetLoader(DatasetLoader):
         else:
             raise ValueError(f"Mode {split} not found!")
         self.elements = {}
-        from transformers import AutoTokenizer
-        tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-1B-Instruct")
-        tokenizer.add_special_tokens({"additional_special_tokens": ["<|gene token|>",
-                                                                    "<|disease token|>",
-                                                                    "<|relation token|>",
-                                                                    "<|no entity token|>"]})
         dataset_config = biotriplex_nerrel_dataset
         dataset_config.use_entity_tokens_as_targets = False
-        dataset = BioTriplexNERRELDataset(dataset_config, tokenizer, split, max_words=None,)
+        dataset = BioTriplexNERRELDataset(dataset_config, split, max_words=None,)
 
         for item in dataset.data:
             key = item["doc_key"]
