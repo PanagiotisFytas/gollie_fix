@@ -26,8 +26,8 @@ test_tasks:
 max_examples_per_task_train: 30000
 max_examples_per_task_val: 5000
 max_examples_per_task_test: null
-max_seq_length: 6048
-generation_max_length: 6048
+max_seq_length: 4096
+generation_max_length: 4096
 ignore_pad_token_for_loss: true
 prompt_loss_weight: 0.0
 
