@@ -82,7 +82,7 @@ disable_tqdm: false
 
 # hub settings
 push_to_hub: false
-resume_from_checkpoint: false
+resume_from_checkpoint: true
 
 # performance
 bf16: true
