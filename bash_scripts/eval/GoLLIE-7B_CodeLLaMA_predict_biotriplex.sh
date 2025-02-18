@@ -17,13 +17,13 @@ export WANDB_PROJECT=GoLLIE_biotriplex_predict
 
 echo CUDA_VISIBLE_DEVICES "${CUDA_VISIBLE_DEVICES}"
 
-#export PYTHONPATH="$PYTHONPATH:$PWD"
+export PYTHONPATH="$PYTHONPATH:$PWD"
 CONFIGS_FOLDER="configs/model_configs/eval"
 
 
 # Call this script from root directory as: sbatch bash_scripts/GoLLIE-7B_CodeLLaMA_train_full_model.sh
 
 
-#torchrun --standalone --master_port 37223 --nproc_per_node=2 src/run.py  ${CONFIGS_FOLDER}/GoLLIE-7B_CodeLLaMA_train_biotriplex.yaml
+torchrun --standalone --master_port 37223 --nproc_per_node=2 src/run.py  ${CONFIGS_FOLDER}/GoLLIE-7B_CodeLLaMA_predict_biotriplex.yaml
 
-python3 -m src.run  ${CONFIGS_FOLDER}/GoLLIE-7B_CodeLLaMA_predict_biotriplex.yaml
+#python3 -m src.run  ${CONFIGS_FOLDER}/GoLLIE-7B_CodeLLaMA_predict_biotriplex.yaml
